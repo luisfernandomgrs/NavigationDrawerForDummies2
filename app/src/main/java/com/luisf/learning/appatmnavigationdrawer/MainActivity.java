@@ -105,11 +105,17 @@ public class MainActivity extends AppCompatActivity {
 
         // setting type of the Intent
         //intent.setType("image");
+
         intent.setType("message/rfc822");
+        // other option of app's to share content...
+        // intent.setType("text/plain");
+        // intent.setType("image/*");
+        // intent.setType("image/png"); // show only app's to open this file with extension
+        // intent.setType("application/pdf"); // an example of MIME Types, accepted
 
         /* No Start automatically
         startActivity(intent);*/
-        startActivity(Intent.createChooser(intent, "Compartilhando dados"));
+        startActivity(Intent.createChooser(intent, "Escolha um App de e-mail"));
     }
 
     @Override
