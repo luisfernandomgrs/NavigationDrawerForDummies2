@@ -1,5 +1,7 @@
 package com.luisf.learning.appatmnavigationdrawer;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -32,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Um evento foi executado com sucesso!", Snackbar.LENGTH_LONG)
-                        .setAction("Ok", null).show();
+                //Snackbar.make(view, "Um evento foi executado com sucesso!", Snackbar.LENGTH_LONG).setAction("Ok", null).show();
+
+                // exec action to open call window...
+                ligarSuporte();
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -61,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
      */
+
+    public void ligarSuporte() {
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:5532510001"));
+        startActivity(intent);
+    }
 
     @Override
     public boolean onSupportNavigateUp() {
