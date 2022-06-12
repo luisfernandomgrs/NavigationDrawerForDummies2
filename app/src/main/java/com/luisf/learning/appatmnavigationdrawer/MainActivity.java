@@ -43,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 //carregarImagem();
 
                 // open web link at google-maps
-                carregarLink();
+                //carregarLink();
+
+                // Sending email...
+                enviarEmail();
             }
         });
 
@@ -89,6 +92,24 @@ public class MainActivity extends AppCompatActivity {
         String actionToExec = "https://www.google.com.br/maps/place/Parque+da+Cidade+-+Itajub%C3%A1/@-22.4109112,-45.4380434,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPk4MlhY_7Kwe54xkVzNeNcn1HQzRXYeUN6T8jh!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPk4MlhY_7Kwe54xkVzNeNcn1HQzRXYeUN6T8jh%3Dw152-h86-k-no!7i4096!8i2304!4m9!1m2!2m1!1sparque+itajub%C3%A1!3m5!1s0x94cb64a6ffcabd9d:0x968f953049e5cb89!8m2!3d-22.4109112!4d-45.4380434!15sCg9wYXJxdWUgaXRhanViw6GSAQljaXR5X3Bhcms?hl=pt-BR";
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(actionToExec));
         startActivity(intent);
+    }
+
+    public void enviarEmail() {
+        // define new stance
+        Intent intent = new Intent(Intent.ACTION_SEND);
+
+        // settings parameters
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"atendimento@atmconsultoria.com.br"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Contato pelo App");
+        intent.putExtra(Intent.EXTRA_TEXT, "Mensagem automática");
+
+        // setting type of the Intent
+        //intent.setType("image");
+        intent.setType("message/rfc822");
+
+        /* No Start automatically
+        startActivity(intent);*/
+        startActivity(Intent.createChooser(intent, "Compartilhando dados"));
     }
 
     @Override
