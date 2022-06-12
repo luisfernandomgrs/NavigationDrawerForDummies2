@@ -37,9 +37,13 @@ public class MainActivity extends AppCompatActivity {
                 //Snackbar.make(view, "Um evento foi executado com sucesso!", Snackbar.LENGTH_LONG).setAction("Ok", null).show();
 
                 // exec action to open call window...
-                ligarSuporte();
+                //ligarSuporte();
+
+                // load image from web...
+                carregarImagem();
             }
         });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -67,7 +71,14 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void ligarSuporte() {
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:5532510001"));
+        String actionToExec = "tel:+555532510001";
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(actionToExec));
+        startActivity(intent);
+    }
+
+    public void carregarImagem() {
+        String actionToExec = "https://files.nsctotal.com.br/s3fs-public/styles/paragraph_image_style/public/graphql-upload-files/praia%20do%20santinho.jpg?RT0lAbBCtiYyHw1K3mlTqFfUAbunqMJm&itok=Hr7XNElF&width=750";
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(actionToExec));
         startActivity(intent);
     }
 
