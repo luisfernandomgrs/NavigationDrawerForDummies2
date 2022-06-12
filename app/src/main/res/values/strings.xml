@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ATM Consultoria, Agência</string>
+    <string name="nav_header_title">ATM Consultoria</string>
+    <string name="nav_header_subtitle">atendimento@atmconsultoria.com.br</string>
+    <!-- Desabilitados, porém ainda necessários... -->
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Configurações</string>
+
+    <!-- Personalizaddos -->
+    <string name="menu_principal">Principal</string>
+    <string name="menu_servicos">Serviços</string>
+    <string name="menu_clientes">Clientes</string>
+    <string name="menu_contatos">Contatos</string>
+    <string name="menu_sobre">Sobre</string>
+
+    <string name="menu_sobre_content_test">Sobre,\nTexto de Teste</string>
+    <string name="fragment_contatos_clients">Em mais de 15 anos de exsitência a ATM acumula experiência em serviços de consutoria para empresas nacionais e multinacionais de ddiversos portes, tendo atendido mais de 1000 empresas desde sua abertura.</string>
+    <string name="fragment_contatos_clients_1">Cielo</string>
+    <string name="fragment_contatos_clients_2">Braskem</string>
+    <string name="fragment_contatos_clients_3">Gerdau</string>
+    <string name="fragment_contatos_clients_4">Embraer</string>
+    <string name="fragment_contatos_clients_5">Natura</string>
+    <string name="fragment_contatos_clients_6">Lojas Americanas</string>
+</resources>
