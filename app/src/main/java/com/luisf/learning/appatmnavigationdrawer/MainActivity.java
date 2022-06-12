@@ -40,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 //ligarSuporte();
 
                 // load image from web...
-                carregarImagem();
+                //carregarImagem();
+
+                // open web link at google-maps
+                carregarLink();
             }
         });
 
@@ -78,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void carregarImagem() {
         String actionToExec = "https://files.nsctotal.com.br/s3fs-public/styles/paragraph_image_style/public/graphql-upload-files/praia%20do%20santinho.jpg?RT0lAbBCtiYyHw1K3mlTqFfUAbunqMJm&itok=Hr7XNElF&width=750";
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(actionToExec));
+        startActivity(intent);
+    }
+
+    public void carregarLink() {
+        String actionToExec = "https://www.google.com.br/maps/place/Parque+da+Cidade+-+Itajub%C3%A1/@-22.4109112,-45.4380434,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPk4MlhY_7Kwe54xkVzNeNcn1HQzRXYeUN6T8jh!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPk4MlhY_7Kwe54xkVzNeNcn1HQzRXYeUN6T8jh%3Dw152-h86-k-no!7i4096!8i2304!4m9!1m2!2m1!1sparque+itajub%C3%A1!3m5!1s0x94cb64a6ffcabd9d:0x968f953049e5cb89!8m2!3d-22.4109112!4d-45.4380434!15sCg9wYXJxdWUgaXRhanViw6GSAQljaXR5X3Bhcms?hl=pt-BR";
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(actionToExec));
         startActivity(intent);
     }
